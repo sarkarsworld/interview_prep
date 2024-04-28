@@ -1,0 +1,32 @@
+SPRING REST
+---------------------------
+
+########## difference between PUT and PATCH HTTP
+
+
+PUT HTTP Request: PUT is a method of modifying resources where the client sends data that updates the entire resource. 
+PUT is similar to POST in that it can create resources, but it does so when there is a defined URL wherein PUT replaces 
+the entire resource if it exists or creates new if it does not exist.
+
+For example, When you want to update the Candidate name and email, you have to send all the parameters of the Candidate including those not to 
+be updated in the request body, otherwise, it will simply replace the entire resource with the name and email.
+
+PATCH HTTP Request: Unlike PUT Request, PATCH does partial update e.g.
+ Fields that need to be updated by the client, only that field is updated without modifying the other field.
+
+So in the previous example, we have to send only the name and email field in the request body.
+
+
+PUT is a method of modifying resource where the client sends data that updates the entire resource .                        
+ 	PATCH is a method of modifying resources where the client sends partial data that is to be updated without modifying the entire data.
+In a PUT request, the enclosed entity is considered to be a modified version of the resource stored on the origin server, and the client is requesting that the stored version be replaced	With PATCH, however, the enclosed entity contains a set of instructions describing how a resource currently residing on the origin server should be modified to produce a new version.
+HTTP PUT is said to be idempotent, So if you send retry a request multiple times, that should be equivalent to a single request modification	 HTTP PATCH is basically said to be non-idempotent. So if you retry the request N times, you will end up having N resources with N different URIs created on the server.
+It has High Bandwidth 	Since Only data that need to be modified if send in the request body as a payload , It has Low Bandwidth
+
+
+##############
+
+17.Rest Ful Webservices and its use.What is RESTful?
+18.Explain  Controller and Rest Controller. and their Differences.
+19.what is front Controller.
+

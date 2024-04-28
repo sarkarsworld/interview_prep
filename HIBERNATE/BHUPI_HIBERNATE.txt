@@ -1,0 +1,51 @@
+HIBERNATE
+------------------------------
+QUES
+
+1) Lazy Loading vs. Eager Loading
+While lazy loading delays the initialization of a resource, eager loading initializes or loads a resource as soon as the code is executed.
+Eager loading also involves pre-loading related entities referenced by a resource.
+ 
+ 2) lazy-and-eager-loading-in-hibernate
+ Lazy Loading − Associated data loads only when we explicitly call getter or size method.
+
+Use Lazy Loading when you are using one-to-many collections.
+Use Lazy Loading when you are sure that you are not using related entities. 
+Egare Loading − Data loading happens at the time of their parent is fetched.
+
+Use Eager Loading when the relations are not too much. Thus, Eager Loading is a good practice to reduce further queries on the Server.
+Use Eager Loading when you are sure that you will be using related entities with the main entity everywhere.
+
+1
+Fetching strategy 
+In Lazy loading, associated data loads only when we explicitly call getter or size method.
+In Eager loading, data loading happens at the time of their parent is fetched 
+2
+Default Strategy in ORM Layers 
+ManyToMany and OneToMany associations used lazy loading strategy by default.
+ManyToOne and OneToOne associations used egare loading strategy by default.
+3
+Loading Configuration
+It can be enabled by using the annotation parameter :
+
+fetch = FetchType.LAZY 
+It can be enabled by using the annotation parameter :
+
+fetch = FetchType.EAGER
+ 4
+Performance
+Initial load time much smaller than Eager loading
+Loading too much unnecessary data might impact performance
+
+
+QUES
+####### Save V/S persist
+
+persist() is well defined. It makes a transient instance persistent. However, it doesn't guarantee that the identifier value will be assigned to the persistent instance immediately, the assignment might happen at flush time. The spec doesn't say that, which is the problem I have with persist().
+
+persist() also guarantees that it will not execute an INSERT statement if it is called outside of transaction boundaries. This is useful in long-running conversations with an extended Session/persistence context.
+
+A method like persist() is required.
+
+save() does not guarantee the same, it returns an identifier, and if an INSERT has to be executed to get the identifier (e.g. "identity" generator, not "sequence"), this INSERT happens immediately, no matter if you are inside or outside of a transaction. This is not good in a long-running conversation with an extended Session/persistence context.
+

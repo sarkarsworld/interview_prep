@@ -1,0 +1,10 @@
+SPRING DATA JPA
+------------------------------
+
+12.Do you know Trnsaction Isolation Level.
+
+14.Any knowledge on Tracnsaction propagation.
+
+27.Mention the differences between JPA and Hibernate.
+29.Explain Spring Data.
+

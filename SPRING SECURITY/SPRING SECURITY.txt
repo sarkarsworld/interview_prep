@@ -1,0 +1,4 @@
+SPRING SECURITY
+---------------------------
+
+1. Spring Security - various types of authentication providers

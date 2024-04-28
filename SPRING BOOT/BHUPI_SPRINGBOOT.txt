@@ -1,0 +1,8 @@
+BHUPI_SPRINGBOOT
+
+23.Can you explain what happens in the background when a Spring Boot Application is “Run as Java Application”?
+24.Use of Sprigboot.
+
+30.What are the differences between @SpringBootApplication and @EnableAutoConfiguration annotation?
+28.How can we create a custom endpoint in Spring Boot Actuator?
+
