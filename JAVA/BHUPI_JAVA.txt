@@ -1,0 +1,114 @@
+CORE JAVA
+---------------------------------------------
+
+QUES
+### difference between instantiate and initialize in java
+
+Declaration: The code set in bold are all variable declarations that associate a variable name with an object type.
+Instantiation: The new keyword is a Java operator that creates the object. like ::Point originOne = new Point(23, 94); create new object 
+
+Initialization: The new operator is followed by a call to a constructor, which initializes the new object. like ::  public int x = 0; proved  the velue
+
+
+
+QUES
+############### Singleton
+
+public class Singleton {
+    private static Singleton singleInstance;
+
+    private Singleton() {
+    }
+
+    public static Singleton getSingleInstance() {
+        if (singleInstance == null) {
+            synchronized (Singleton.class) {
+                if (singleInstance == null) {
+                    singleInstance = new Singleton();
+                }
+            }
+        }
+        return singleInstance;
+    }
+}
+
+It can break if the class is Serializable
+It can break if its 'Clonable`
+You can break by Reflection 
+it can break ff multiple classloaders are loaded the class
+
+
+QUES
+############
+
+Java Collections Utility Class
+
+The Collections utility class consists exclusively of static methods that operate on or return collections. It contains polymorphic algorithms 
+ operate on collections, "wrappers", which return a new collection backed by a specified collection
+
+Method Signature	Description
+Collections.sort(List myList)	Sort the myList (implementation of any List interface) provided an argument in natural ordering.
+Collections.sort(List, comparator c)	Sort the myList(implementation of any List interface) as per comparator c ordering (c class should implement comparator interface)
+Collections.shuffle(List myList)	Puts the elements of myList ((implementation of any List interface)in random order
+Collections.reverse(List myList)	Reverses the elements of myList ((implementation of any List interface)
+Collections.binarySearch(List mlist, T key)	Searches the mlist (implementation of any List interface) for the specified object using the binary search algorithm.
+Collections.copy(List dest, List src)	Copy the source List into dest List.
+Collections.frequency(Collection c, Object o)	Returns the number of elements in the specified collection class c (which implements Collection interface can be List, Set or Queue) equal to the specified object
+Collections.synchronizedCollection(Collection c)	Returns a synchronized (thread-safe) collection backed by the specified collection
+
+QUES
+##############Parallel vs Sequential Stream in Java	
+
+Sequential Stream
+Sequential Streams are non-parallel streams that use a single thread to process the pipelining. Any stream operation without explicitly 
+specified as parallel is treated as a sequential stream. Sequential stream’s objects are pipelined in a single stream on the same processing
+ system hence it never takes the advantage of
+ the multi-core system even though the underlying system supports parallel execution. Sequential stream performs operation one by one.
+ List<String> list = Arrays.asList( "Hello ",  
+                          "G", "E", "E", "K", "S!"); 
+   list.stream().forEach(System.out::print); 
+   
+   Parallel Stream
+It is a very useful feature of Java to use parallel processing, even if the whole program may not
+ be parallelized. Parallel stream leverage multi-core processors, which increases its performance. 
+ Using parallel streams, our code gets divide into multiple streams which can be executed parallelly on 
+ separate cores of the system and the final result is shown as the combination of all the individual core’s outcomes. 
+ It is always not necessary that the whole program be parallelized, but at least some parts should be parallelized which 
+ handles the stream. The order of execution is not under our control and can give us unpredictably unordered results and like 
+ any other parallel programming, they are complex and error-prone. 
+
+The Java stream library provides a couple of ways to do it. easily, and in a reliable manner. 
+
+One of the simple ways to obtain a parallel stream is by invoking the parallelStream() method of Collection interface.
+Another way is to invoke the parallel() method of BaseStream interface on a sequential stream.
+It is important to ensure that the result of the parallel stream is the same as is obtained through the sequential stream, 
+so the parallel streams must be stateless, non-interfering, and associative.
+
+Example
+
+List<String> list = Arrays.asList("Hello ",  
+                         "G", "E", "E", "K", "S!"); 
+  
+        // using parallelStream()  
+        // method for parallel stream 
+        list.parallelStream().forEach(System.out::print); 
+
+
+
+QUES
+#############
+Which collection used
+Array list
+1.what is the internal implementation of Hashtable  and Array list
+2.what is the internal data Structure of hashmap(where you store internal elements)
+3.Difference between array and array list
+4.If i Ask you creat custom array list how do you write.
+5.What are the improvements in hash map in Java.
+6.What is Functional inteface and its use.
+7.Difference between Functional Interface and internal inteerface.
+8.Where you are using functional interface in lambda Exression.
+9.Difference Between Concurrent hash map and hash map.
+10.What is meant by Synchronization.
+11.what is diff b/w hash table,hash map, Consurrent Hash Map.
+
+

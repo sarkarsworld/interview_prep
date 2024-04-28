@@ -1,0 +1,47 @@
+String  s= "Java"
+Output - J,v
+non repeated char
+
+
+
+----------------
+class A{
+public void method() throws IOException
+{
+}
+}
+class B extends A{
+public void method() throws Exception
+{
+}
+}
+
+public class MethodOverrdingTestMain {
+public static void main(String[] args) {
+B b=new B();
+try {
+b.method();
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+}
+
+
+------------------------
+public class Ex {
+public void methodTest(String object)
+{
+System.out.println("Calling String method");
+}
+public void methodTest(Object object)
+{
+System.out.println("Calling object method");
+}
+
+public static void main(String args[])
+{
+Ex moe=new Ex();
+moe.methodTest(null);
+}
+}
